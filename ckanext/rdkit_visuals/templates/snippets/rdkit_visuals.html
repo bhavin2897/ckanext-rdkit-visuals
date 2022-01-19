@@ -1,4 +1,4 @@
-{% if pkg %}
+{% if pkg.get('inchi_key') %}
 {% set data_dict = {'inchi': pkg.get('inchi'), 'smiles': pkg.get('smiles'), 'inchi_key': pkg.get('inchi_key'), 'exact_mass' : pkg.get('exactmass')} %}
 
 
