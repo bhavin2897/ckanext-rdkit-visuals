@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="Changed with a clause">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/rdkit_visuals.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +83,14 @@
       <option name="presentableId" value="Default" />
       <updated>1641293065344</updated>
     </task>
+    <task id="LOCAL-00001" summary="Changed with a clause">
+      <created>1642598809360</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642598809360</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,5 +103,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changed with a clause" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed with a clause" />
   </component>
 </project>
