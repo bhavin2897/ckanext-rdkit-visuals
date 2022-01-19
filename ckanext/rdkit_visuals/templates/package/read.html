@@ -1,0 +1,8 @@
+{% ckan_extends %}
+
+
+{% block package_notes %}
+  {{ super() }}
+  {% snippet "snippets/rdkit_visuals.html", pkg = pkg_dict %}
+
+{% endblock %}

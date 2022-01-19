@@ -1,0 +1,14 @@
+# rdkit_visuals-js:
+#   filter: rjsmin
+#   output: ckanext-rdkit_visuals/%(version)s-rdkit_visuals.js
+#   contents:
+#     - js/rdkit_visuals.js
+#   extra:
+#     preload:
+#       - base/main
+
+# rdkit_visuals-css:
+#   filter: cssrewrite
+#   output: ckanext-rdkit_visuals/%(version)s-rdkit_visuals.css
+#   contents:
+#     - css/rdkit_visuals.css
