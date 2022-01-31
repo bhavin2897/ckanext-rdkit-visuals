@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="freezing requirements">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="adding &amp; migrating molecule data table">
       <change afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/model/rdkit_visuals/molecule_tab.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -111,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642600161731</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding &amp; migrating molecule data table">
+      <created>1643620088706</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1643620088706</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +137,7 @@
     <MESSAGE value="Changed with a clause" />
     <MESSAGE value="Displayin on Short Inchi as Chemical info" />
     <MESSAGE value="freezing requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="freezing requirements" />
+    <MESSAGE value="adding &amp; migrating molecule data table" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding &amp; migrating molecule data table" />
   </component>
 </project>
