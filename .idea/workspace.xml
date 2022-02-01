@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="migrating molecule data table">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="xml file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -124,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643620126316</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="xml file">
+      <created>1643706387400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643706387400</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +154,7 @@
     <MESSAGE value="Displayin on Short Inchi as Chemical info" />
     <MESSAGE value="freezing requirements" />
     <MESSAGE value="adding &amp; migrating molecule data table" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding &amp; migrating molecule data table" />
+    <MESSAGE value="xml file" />
+    <option name="LAST_COMMIT_MESSAGE" value="xml file" />
   </component>
 </project>
