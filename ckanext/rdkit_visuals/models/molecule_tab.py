@@ -22,7 +22,7 @@ molecule_data_table = Table(u'molecule_data', meta.metadata,
                 Column(u'inchi',types.UnicodeText),
                 Column(u'smiles',types.UnicodeText),
                 Column(u'inchi_key', types.UnicodeText),
-                Column(u'exact_mass', types.Float)
+                Column(u'exact_mass', types.UnicodeText)
         )
 
 

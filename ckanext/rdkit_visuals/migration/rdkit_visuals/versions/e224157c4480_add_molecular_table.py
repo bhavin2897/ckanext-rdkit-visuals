@@ -23,7 +23,7 @@ def upgrade():
                     sa.Column(u'inchi', sa.UnicodeText()),
                     sa.Column(u'smiles', sa.UnicodeText()),
                     sa.Column(u'inchi_key', sa.UnicodeText()),
-                    sa.Column(u'exact_mass', sa.Float())
+                    sa.Column(u'exact_mass', sa.UnicodeText())
                     )
 
 
