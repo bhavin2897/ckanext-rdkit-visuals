@@ -36,4 +36,7 @@ class RdkitVisualsPlugin(plugins.SingletonPlugin):
 
     def get_helpers(self):
 
-        return {'rdkit_visuals': RdkitVisualsController.display_image}
+        return {'rdkit_visuals': RdkitVisualsController.display_image,
+                'molecule_data':RdkitVisualsController.molecule_data,
+                'alternate_names': RdkitVisualsController.alternames,
+                'related_values': RdkitVisualsController.related_resources,}
