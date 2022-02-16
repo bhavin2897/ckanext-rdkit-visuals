@@ -1,0 +1,100 @@
+{% set data_dict = {'inchi': pkg.get('inchi'), 'smiles': pkg.get('smiles'), 'inchi_key': pkg.get('inchi_key'), 'exact_mass' : pkg.get('exactmass')} %}
+
+
+{% set dest_url = h.url_for('rdkit_visuals.display_image', package_name = pkg.get('id'), _external=True) %}
+{% set molecule_formula = h.molecule_data(package_name = pkg.get('id'))  %}
+{% set alter_names = h.alternate_names(package_name = pkg.get('id')) %}
+
+
+<input type="hidden" id="ajax_url" value="{{dest_url}}">
+<input type="hidden" id="package_id" value="{{pkg.id}}">
+
+
+<script type="text/javascript">
+  let request = new XMLHttpRequest();
+  let ajax_url = document.getElementById("ajax_url").value;
+  let formdata = new FormData();
+  formdata.set('pkg_id', document.getElementById("package_id").value);
+
+  request.onreadystatechange = function() {
+      if (request.readyState == XMLHttpRequest.DONE && request.status == 200 ){
+          document.getElementById("imageid").setAttribute("src", 'data:image/png;base64,' + this.responseText);
+      }
+      else {
+          console.info(this.status)
+      }
+
+  };
+
+  request.open("POST", ajax_url, true);
+  request.send(formdata);
+</script>
+
+
+
+<section class="chemical-info">
+  <h3>{{ _('Chemical Info') }}</h3>
+  <div class="row">
+  <div class = "col col-md-4">  <img id="imageid" src=""  alt='molecular Image'/> </div>
+   <div class="col col-md-8">
+       <table class="table">
+           {% if alter_names %}
+           {% set rowspan = alter_names|length %}
+           <tr>
+                <th rowspan="{{ row_span }}" width="25%" scope="row" class="dataset-label">{{ _("Synonyms") }}</th>
+                {% for names in alter_names %}
+                <tr>
+                    <td width="50%" scope="row" class="dataset-details">{{ names }}</td>
+                </tr>
+                {% endfor %}
+           </tr>
+         {% endif %}
+
+
+       </table>
+        <table class="table">
+         <tbody>
+
+         {% if data_dict.inchi %}
+           <tr>
+            <th width="25%" scope="row" class="dataset-label">{{ _("InChI") }}</th>
+            <td  width="50%" class="dataset-details">{{ data_dict.inchi }}</td>
+           </tr>
+         {% endif %}
+
+         {% if data_dict.smiles %}
+           <tr>
+              <th scope="row" class="dataset-label">{{ _("SMILES") }}</th>
+              <td class="dataset-details">{{ data_dict.smiles }}</td>
+           </tr>
+          {% endif %}
+
+         {% if data_dict.inchi_key %}
+           <tr>
+              <th scope="row" class="dataset-label">{{ _("InChI Key ") }}</th>
+              <td class="dataset-details">{{ data_dict.inchi_key }}</td>
+           </tr>
+         {% endif %}
+
+         {% if molecule_formula %}
+           <tr>
+              <th scope="row" class="dataset-label">{{ _("Molecular Formula") }}</th>
+              <td class="dataset-details"> {{ molecule_formula }}</td>
+           </tr>
+
+         {% endif %}
+         {% if data_dict.exact_mass %}
+           <tr>
+              <th scope="row" class="dataset-label">{{ _("Exact Mass") }}</th>
+              <td class="dataset-details">{{ data_dict.exact_mass }} {{ _('g/mol') }}</td>
+           </tr>
+         {% endif %}
+          </tbody>
+    </table>
+   </div>
+
+</div>
+</section>
+
+
+
