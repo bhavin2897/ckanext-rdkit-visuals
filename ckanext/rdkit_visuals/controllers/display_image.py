@@ -131,7 +131,10 @@ class RdkitVisualsController():
             # Check if the row already exists, if not then INSERT
 
             cur.execute("SELECT relation_id, relation_type FROM related_resources WHERE package_id = %s", (package_id,))
+
             rel_values = cur.fetchall()
+
+
 
             # commit cursor
             con.commit()
@@ -140,13 +143,14 @@ class RdkitVisualsController():
             # close connection
             con.close()
 
-
-
         except:
             pass
 
-        print(rel_values)
-        return rel_values
+        if any(None in elem for elem in rel_values):
+            return None
+        else:
+            print(rel_values)
+            return rel_values
 
 
 
