@@ -1,0 +1,14 @@
+
+{% set related_values = h.related_values(package_name = pkg.get('id')) %}
+{% if related_values %}
+
+<h2> {{ _('Related Resources') }} </h2>
+<ul>
+    {% for rel_val in related_values %}
+    <li><p> This dataset related as <b>{{ rel_val[1] }}</b> to <a href="https://doi.org/{{ rel_val[0] }}"> {{ rel_val[0] }} </a></p> </li>
+    {% endfor %}
+</ul>
+
+
+
+{% endif %}
