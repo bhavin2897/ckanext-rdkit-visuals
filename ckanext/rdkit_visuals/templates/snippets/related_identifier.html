@@ -4,7 +4,7 @@
         <h2> {{ _('Related Resources') }} </h2>
         <ul>
             {% for rel_val in related %}
-            <li><p> This dataset related as <b>{{ rel_val[1] }}</b> to <a href="https://doi.org/{{ rel_val[0] }}"> {{ rel_val[0] }} </a></p> </li>
+            <li><p> This dataset related as <b>{{ rel_val[1] }}</b> to <a href="https://doi.org/{{ rel_val[0] }}" target="_blank"> {{ rel_val[0] }} </a></p> </li>
             {% endfor %}
         </ul>
 

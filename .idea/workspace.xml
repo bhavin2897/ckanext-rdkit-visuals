@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="Front-end related resource changes">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="Data &amp; Resource page view changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/rdkit_visuals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/related_identifier.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/related_identifier.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +47,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets" />
+    <property name="last_opened_file_path" value="$USER_HOME$/gatsby-site" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -195,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1645015238630</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Data &amp; Resource page view changes">
+      <created>1645022554532</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1645022554532</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Data &amp; Resource page view changes">
+      <created>1645022567443</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1645022567443</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +238,7 @@
     <MESSAGE value="add molecular formula column" />
     <MESSAGE value="changes to related resources list" />
     <MESSAGE value="Front-end related resource changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Front-end related resource changes" />
+    <MESSAGE value="Data &amp; Resource page view changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Data &amp; Resource page view changes" />
   </component>
 </project>

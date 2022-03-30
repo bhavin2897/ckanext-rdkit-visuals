@@ -59,8 +59,8 @@ class RdkitVisualsController():
 
         cur.execute("SELECT mol_formula FROM molecule_data WHERE package_id = %s", (package_id,))
 
-
-        molecule_formula = cur.fetchone()[0]
+        if cur.fetchall()[0]:
+            molecule_formula = cur.fetchall()[0]
 #        molecule_formula = molecule_formula[0]
         # commit cursor
         con.commit()
@@ -68,7 +68,7 @@ class RdkitVisualsController():
         cur.close()
         # close connection
         con.close()
-        return  molecule_formula
+        return molecule_formula
 
     def alternames(package_name):
         alternate_names =[]
@@ -109,7 +109,6 @@ class RdkitVisualsController():
         return alternate_names
 
 
-
     def related_resources(package_name):
 
         rel_values = []
@@ -135,7 +134,6 @@ class RdkitVisualsController():
             rel_values = cur.fetchall()
 
 
-
             # commit cursor
             con.commit()
             # close cursor
@@ -149,7 +147,7 @@ class RdkitVisualsController():
         if any(None in elem for elem in rel_values):
             return None
         else:
-            print(rel_values)
+
             return rel_values
 
 

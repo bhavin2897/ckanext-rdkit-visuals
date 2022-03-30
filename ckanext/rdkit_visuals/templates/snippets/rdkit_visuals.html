@@ -1,10 +1,10 @@
 
 {% set data_dict = {'inchi': pkg.get('inchi'), 'smiles': pkg.get('smiles'), 'inchi_key': pkg.get('inchi_key'), 'exact_mass' : pkg.get('exactmass')} %}
 
-
 {% set dest_url = h.url_for('rdkit_visuals.display_image', package_name = pkg.get('id'), _external=True) %}
 {% set molecule_formula = h.molecule_data(package_name = pkg.get('id'))  %}
 {% set alter_names = h.alternate_names(package_name = pkg.get('id')) %}
+{% set exmass = data_dict.exact_mass %}
 
 
 <input type="hidden" id="ajax_url" value="{{dest_url}}">
@@ -87,7 +87,7 @@
          {% if data_dict.exact_mass %}
            <tr>
               <th scope="row" class="dataset-label">{{ _("Exact Mass") }}</th>
-              <td class="dataset-details">{{ data_dict.exact_mass }} {{ _('g/mol') }}</td>
+              <td class="dataset-details">{{ exmass|float|round(3,'ceil') }} {{ _('g/mol') }}</td>
            </tr>
          {% endif %}
           </tbody>
