@@ -30,6 +30,7 @@ Apporach while harvesting (For more information about the harvester [OAI-PMH Har
 - Molecule → Exact Mass 
 
 This Plugin also contains database migration tables to store molecule data of each dataset molecule in molecule table. 
+Name of the database table: `molecule_data`
 
 Database Migration is done, to establibsh new tables within the CKAN PostgreSQL database. For more information please check offical documenation: https://docs.ckan.org/en/2.9/extensions/best-practices.html
 
