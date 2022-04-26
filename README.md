@@ -77,7 +77,7 @@ To install ckanext-rdkit-visuals:
 
     ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit-visuals
 
-You will get a message Upgrading DB: SUCCESS.
+You will get a message `Upgrading DB: SUCCESS`
 
 Later, check the database list of tables for the ckan user to see the table for the migrated/generated table.
 
@@ -107,7 +107,7 @@ To upgrade ckan database, for the tables you have created:
 
     ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit-visuals
 
-You will get a message Upgrading DB: SUCCESS.
+You will get a message `Upgrading DB: SUCCESS`
 
 Later, check the database list of tables for the ckan user to see the table for the migrated/generated table.
 
