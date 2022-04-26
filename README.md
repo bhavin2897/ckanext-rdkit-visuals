@@ -2,38 +2,53 @@
 
 # ckanext-rdkit-visuals
 
-**TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
+RDKit Module is an Open source toolkit for cheminformatics and Machine Learning. 
+Here Rdkit python module is used as an important library extension to CKAN venv to create various cheminformatics, perform and provide various chemical solution from metadata harvested (fetched) from different chemistry repositories. 
 
+More information about RDKit: https://www.rdkit.org/
+
+In this plugin, the major rdkit library must be installed giving an assess to perform chemical logics to create:
+InChI
+Smiles
+InChIKey
+Molecule
+Molecular Image
+Molecular Formula
+Exact Mass 
+
+Most of the chemistry repository provide standard InChI key in their metadata fields. We have used this field to create other chemical information to enrich the dataset display and provide more information of the sample or research dataset, as the user can easily go through. 
+
+Not only on the "dataset" page of CKAN, but also on "resource" page. 
+
+
+Apporach while harvesting (For more information about the harvester [OAI-PMH Harvester](https://github.com/bhavin2897/ckanext-oaipmh)): 
+InChI → Smiles
+InChI → InChIKey
+InChI → Molecule
+Molecule → Molecular Image
+Molecule → Molecular Formula
+Molecule → Exact Mass 
+
+This Plugin also contains database migration tables to store molecule data of each dataset molecule in molecule table. 
+
+Database Migration is done, to establibsh new tables within the CKAN PostgreSQL database. For more information please check offical documenation: https://docs.ckan.org/en/2.9/extensions/best-practices.html
+
+NOTE: If you are creating your own migration tables then, Please follow official documentation preciesly. (https://docs.ckan.org/en/2.9/extensions/best-practices.html)
+
+You can copy migration python file and version control files, after creating migration is done. if you are using different table names & column names, please name them using "lower_cases" instead of CamelCase.
 
 ## Requirements
-
-**TODO:** For example, you might want to mention here which versions of CKAN this
-extension works with.
-
-If your extension works across different versions you can add the following table:
 
 Compatibility with core CKAN versions:
 
 | CKAN version    | Compatible?   |
 | --------------- | ------------- |
-| 2.6 and earlier | not tested    |
-| 2.7             | not tested    |
-| 2.8             | not tested    |
-| 2.9             | not tested    |
-
-Suggested values:
-
-* "yes"
-* "not tested" - I can't think of a reason why it wouldn't work
-* "not yet" - there is an intention to get it working
-* "no"
+| 2.8 & eariler             | not tested    |
+| 2.9             | yes    |
 
 
 ## Installation
 
-**TODO:** Add any additional install steps to the list below.
-   For example installing any non-Python dependencies or adding any required
-   config settings.
 
 To install ckanext-rdkit-visuals:
 
@@ -43,7 +58,7 @@ To install ckanext-rdkit-visuals:
 
 2. Clone the source and install it on the virtualenv
 
-    git clone https://github.com/BhavHub/ckanext-rdkit-visuals.git
+    git clone https://github.com/bhavin2897/ckanext-rdkit-visuals.git
     cd ckanext-rdkit-visuals
     pip install -e .
 	pip install -r requirements.txt
@@ -55,17 +70,20 @@ To install ckanext-rdkit-visuals:
 4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
 
      sudo service apache2 reload
+     
+
+5. To upgrade ckan database, for the tables you have created:
+
+    ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit-visuals
+
+You will get a message Upgrading DB: SUCCESS.
+
+Later, check the database list of tables for the ckan user to see the table for the migrated/generated table.
 
 
 ## Config settings
 
 None at present
-
-**TODO:** Document any optional config settings here. For example:
-
-	# The minimum number of hours to wait before re-checking a resource
-	# (optional, default: 24).
-	ckanext.rdkit_visuals.some_setting = some_default_value
 
 
 ## Developer installation
@@ -73,10 +91,24 @@ None at present
 To install ckanext-rdkit-visuals for development, activate your CKAN virtualenv and
 do:
 
-    git clone https://github.com/BhavHub/ckanext-rdkit-visuals.git
+    git clone https://github.com/bhavin2897/ckanext-rdkit-visuals.git
     cd ckanext-rdkit-visuals
     python setup.py develop
     pip install -r dev-requirements.txt
+
+Restart Server if you are using Supervisor and Nginx
+
+    sudo service supervisor reload
+    sudo service nginx reload 
+
+   
+To upgrade ckan database, for the tables you have created:
+
+    ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit-visuals
+
+You will get a message Upgrading DB: SUCCESS.
+
+Later, check the database list of tables for the ckan user to see the table for the migrated/generated table.
 
 
 ## Tests
