@@ -96,6 +96,12 @@ do:
     cd ckanext-rdkit-visuals
     python setup.py develop
     pip install -r dev-requirements.txt
+    
+Add Plugin-in int he confirguation file
+	
+	sudo nano /etc/ckan/default/ckan.ini 
+	
+	ckan.plugin: <other plugins> rdkit_visuals
 
 Restart Server if you are using Supervisor and Nginx
 
@@ -105,7 +111,7 @@ Restart Server if you are using Supervisor and Nginx
    
 To upgrade ckan database, for the tables you have created:
 
-    ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit-visuals
+    ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit_visuals
 
 You will get a message `Upgrading DB: SUCCESS`
 
