@@ -22,12 +22,12 @@ Not only on the "dataset" page of CKAN, but also on "resource" page.
 
 
 Apporach while harvesting (For more information about the harvester [OAI-PMH Harvester](https://github.com/bhavin2897/ckanext-oaipmh)): 
-InChI → Smiles
-InChI → InChIKey
-InChI → Molecule
-Molecule → Molecular Image
-Molecule → Molecular Formula
-Molecule → Exact Mass 
+- InChI → Smiles
+- InChI → InChIKey
+- InChI → Molecule
+- Molecule → Molecular Image
+- Molecule → Molecular Formula
+- Molecule → Exact Mass 
 
 This Plugin also contains database migration tables to store molecule data of each dataset molecule in molecule table. 
 
