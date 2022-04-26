@@ -59,10 +59,10 @@ To install ckanext-rdkit-visuals:
 
 2. Clone the source and install it on the virtualenv
 
-    git clone https://github.com/bhavin2897/ckanext-rdkit-visuals.git
-    cd ckanext-rdkit-visuals
-    pip install -e .
-	pip install -r requirements.txt
+     git clone https://github.com/bhavin2897/ckanext-rdkit-visuals.git
+     cd ckanext-rdkit-visuals
+     pip install -e .
+	 pip install -r requirements.txt
 
 3. Add `rdkit-visuals` to the `ckan.plugins` setting in your CKAN
    config file (by default the config file is located at
@@ -75,7 +75,7 @@ To install ckanext-rdkit-visuals:
 
 5. To upgrade ckan database, for the tables you have created:
 
-    ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit-visuals
+     ckan -c /etc/ckan/default/ckan.ini db upgrade -p rdkit-visuals
 
 You will get a message `Upgrading DB: SUCCESS`
 
