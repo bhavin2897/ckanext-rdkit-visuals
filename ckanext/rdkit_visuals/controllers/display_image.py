@@ -40,7 +40,7 @@ class RdkitVisualsController():
 
     def molecule_data(package_name):
 
-        molecule_formula = None
+         # molecule_formula = None
 
         package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
         package_id = package['id']
@@ -58,17 +58,14 @@ class RdkitVisualsController():
         # Check if the row already exists, if not then INSERT
 
         cur.execute("SELECT mol_formula FROM molecule_data WHERE package_id = %s", (package_id,))
-
-        if cur.fetchall()[0]:
-            molecule_formula = cur.fetchall()[0]
-#        molecule_formula = molecule_formula[0]
+        molecule_formula = cur.fetchone()
         # commit cursor
         con.commit()
         # close cursor
         cur.close()
         # close connection
         con.close()
-        return molecule_formula
+        return molecule_formula[0]
 
     def alternames(package_name):
         alternate_names =[]
