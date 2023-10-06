@@ -105,7 +105,6 @@ class RdkitVisualsController():
 
         return alternate_names
 
-
     def related_resources(package_name):
 
         rel_values = []
