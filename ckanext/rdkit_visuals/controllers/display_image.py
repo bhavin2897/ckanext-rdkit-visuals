@@ -57,7 +57,7 @@ class RdkitVisualsController():
 
         # Check if the row already exists, if not then INSERT
 
-        cur.execute("SELECT mol_formula FROM molecules WHERE package_id = %s", (package_id,))
+        cur.execute("SELECT mol_formula FROM molecule_data WHERE package_id = %s", (package_id,))
         molecule_formula = cur.fetchone()
         # commit cursor
         con.commit()
