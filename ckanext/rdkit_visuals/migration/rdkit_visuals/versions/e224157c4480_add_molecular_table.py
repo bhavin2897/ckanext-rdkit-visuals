@@ -15,7 +15,7 @@ down_revision = None
 branch_labels = None
 depends_on = None
 
-'''molecule Table'''
+'''molecules Table'''
 def upgrade():
     op.create_table('molecule_data',
                     sa.Column('id', sa.Integer, primary_key=True, nullable=False),
@@ -29,4 +29,4 @@ def upgrade():
 
 
 def downgrade():
-    op.drop_table('molecule_data')
+    pass

@@ -11,17 +11,17 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 from rdkit.Chem.Draw import IPythonConsole
 
-
 import io
 import base64
-
 
 DB_HOST = "localhost"
 DB_USER = "ckan_default"
 DB_NAME = "ckan_default"
 DB_pwd = "123456789"
 
+
 class RdkitVisualsController():
+
     def display_image(package_name):
         # package_name = request.form.get('package')
         package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
@@ -40,7 +40,7 @@ class RdkitVisualsController():
 
     def molecule_data(package_name):
 
-         # molecule_formula = None
+        # molecule_formula = None
 
         package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
         package_id = package['id']
@@ -57,7 +57,7 @@ class RdkitVisualsController():
 
         # Check if the row already exists, if not then INSERT
 
-        cur.execute("SELECT mol_formula FROM molecule_data WHERE package_id = %s", (package_id,))
+        cur.execute("SELECT mol_formula FROM molecules WHERE package_id = %s", (package_id,))
         molecule_formula = cur.fetchone()
         # commit cursor
         con.commit()
@@ -68,12 +68,12 @@ class RdkitVisualsController():
         return molecule_formula[0]
 
     def alternames(package_name):
-        alternate_names =[]
+        alternate_names = []
         package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
         package_id = package['id']
 
         try:
-        # connect to db
+            # connect to db
             con = psycopg2.connect(user=DB_USER,
                                    host=DB_HOST,
                                    password=DB_pwd,
@@ -85,7 +85,6 @@ class RdkitVisualsController():
             cur = con.cursor()
 
             # Check if the row already exists, if not then INSERT
-
 
             cur.execute("SELECT alternate_name FROM related_resources WHERE package_id = %s", (package_id,))
             alternate_names_list = cur.fetchall()
@@ -129,6 +128,40 @@ class RdkitVisualsController():
 
             rel_values = cur.fetchall()
 
+            # commit cursor
+            con.commit()
+            # close cursor
+            cur.close()
+            # close connection
+            con.close()
+
+        except Exception as e:
+            print(f"Failed to {e}")
+
+        if any(None in elem for elem in rel_values):
+            return None
+        else:
+
+            return rel_values
+
+    def insert_to_database():
+        try:
+            # connect to db
+            con = psycopg2.connect(user=DB_USER,
+                                   host=DB_HOST,
+                                   password=DB_pwd,
+                                   dbname=DB_NAME)
+
+            con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+
+            # Cursor
+            cur = con.cursor()
+
+            # Check if the row already exists, if not then INSERT
+
+            cur.execute("")
+
+            rel_values = cur.fetchall()
 
             # commit cursor
             con.commit()
@@ -137,16 +170,5 @@ class RdkitVisualsController():
             # close connection
             con.close()
 
-        except:
-            pass
-
-        if any(None in elem for elem in rel_values):
-            return None
-        else:
-
-            return rel_values
-
-
-
-
-
+        except Exception as e:
+            print(f"Failed to {e}")
