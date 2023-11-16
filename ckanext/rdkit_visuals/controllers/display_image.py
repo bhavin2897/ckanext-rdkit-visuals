@@ -54,18 +54,23 @@ class RdkitVisualsController():
 
         # Cursor
         cur = con.cursor()
+        cur2 = con.cursor()
 
         # Check if the row already exists, if not then INSERT
 
-        cur.execute("SELECT mol_formula FROM molecule_data WHERE package_id = %s", (package_id,))
-        molecule_formula = cur.fetchone()
+        cur.execute("SELECT molecules_id FROM molecule_rel_data WHERE package_id = %s", (package_id,))
+
+        moleculesid  = cur.fetchone()
+        molecule_formula = cur2.execute("SELECT inchi FROM molecules WHERE molecules.id = %s", (moleculesid,))
+
         # commit cursor
         con.commit()
         # close cursor
         cur.close()
         # close connection
         con.close()
-        return molecule_formula[0]
+
+        return molecule_formula
 
     def alternames(package_name):
         alternate_names = []
@@ -144,31 +149,3 @@ class RdkitVisualsController():
 
             return rel_values
 
-    def insert_to_database():
-        try:
-            # connect to db
-            con = psycopg2.connect(user=DB_USER,
-                                   host=DB_HOST,
-                                   password=DB_pwd,
-                                   dbname=DB_NAME)
-
-            con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-
-            # Cursor
-            cur = con.cursor()
-
-            # Check if the row already exists, if not then INSERT
-
-            cur.execute("")
-
-            rel_values = cur.fetchall()
-
-            # commit cursor
-            con.commit()
-            # close cursor
-            cur.close()
-            # close connection
-            con.close()
-
-        except Exception as e:
-            print(f"Failed to {e}")
