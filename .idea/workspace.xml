@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="final-push for advance search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/e224157c4480_add_molecular_table.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/e224157c4480_add_molecular_table.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
