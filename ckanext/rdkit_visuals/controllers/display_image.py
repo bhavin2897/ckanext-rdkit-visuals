@@ -1,23 +1,10 @@
-import ckan.plugins as plugins
-import ckan.plugins.toolkit as toolkit
-
-from flask import render_template
-import json
-import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-
-from PIL import Image
-from rdkit import Chem
-from rdkit.Chem import Draw
-from rdkit.Chem.Draw import IPythonConsole
-
-import io
 import base64
+import io
 
-DB_HOST = "localhost"
-DB_USER = "ckan_default"
-DB_NAME = "ckan_default"
-DB_pwd = "123456789"
+import ckan.plugins.toolkit as toolkit
+from PIL import Image
+from ckanext.related_resources.models.related_resources import RelatedResources as related_resources
+from ckanext.rdkit_visuals.models.molecule_rel import MolecularRelationData as molecule_rel
 
 
 class RdkitVisualsController():
@@ -40,35 +27,20 @@ class RdkitVisualsController():
 
     def molecule_data(package_name):
 
-        # molecule_formula = None
+        molecule_formula = []
 
         package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
         package_id = package['id']
-        # connect to db
-        con = psycopg2.connect(user=DB_USER,
-                               host=DB_HOST,
-                               password=DB_pwd,
-                               dbname=DB_NAME)
 
-        con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+        molecule_formula_list = molecule_rel.get_mol_formula_by_package_id(package_id)
 
-        # Cursor
-        cur = con.cursor()
-        cur2 = con.cursor()
 
-        # Check if the row already exists, if not then INSERT
+        try:
+            for x in molecule_formula_list:
+                molecule_formula = "['']".join(x)
 
-        cur.execute("SELECT molecules_id FROM molecule_rel_data WHERE package_id = %s", (package_id,))
-
-        moleculesid  = cur.fetchone()
-        molecule_formula = cur2.execute("SELECT inchi FROM molecules WHERE molecules.id = %s", (moleculesid,))
-
-        # commit cursor
-        con.commit()
-        # close cursor
-        cur.close()
-        # close connection
-        con.close()
+        except TypeError:
+            pass
 
         return molecule_formula
 
@@ -78,34 +50,14 @@ class RdkitVisualsController():
         package_id = package['id']
 
         try:
-            # connect to db
-            con = psycopg2.connect(user=DB_USER,
-                                   host=DB_HOST,
-                                   password=DB_pwd,
-                                   dbname=DB_NAME)
+            alternate_names_list = related_resources.get_alternate_names_by_package_id(package_id)
 
-            con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-
-            # Cursor
-            cur = con.cursor()
-
-            # Check if the row already exists, if not then INSERT
-
-            cur.execute("SELECT alternate_name FROM related_resources WHERE package_id = %s", (package_id,))
-            alternate_names_list = cur.fetchall()
-
-            # commit cursor
-            con.commit()
-            # close cursor
-            cur.close()
-            # close connection
-            con.close()
             for x in alternate_names_list:
                 names = "('')".join(x)
                 alternate_names.append(names)
-
         except TypeError:
             pass
+            # If NONE passed
 
         return alternate_names
 
@@ -116,36 +68,13 @@ class RdkitVisualsController():
         package_id = package['id']
 
         try:
-            # connect to db
-            con = psycopg2.connect(user=DB_USER,
-                                   host=DB_HOST,
-                                   password=DB_pwd,
-                                   dbname=DB_NAME)
+            rel_values = related_resources.get_relation_values_by_package_id(package_id)
 
-            con.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-
-            # Cursor
-            cur = con.cursor()
-
-            # Check if the row already exists, if not then INSERT
-
-            cur.execute("SELECT relation_id, relation_type FROM related_resources WHERE package_id = %s", (package_id,))
-
-            rel_values = cur.fetchall()
-
-            # commit cursor
-            con.commit()
-            # close cursor
-            cur.close()
-            # close connection
-            con.close()
-
-        except Exception as e:
-            print(f"Failed to {e}")
+        except Exception:
+            pass
 
         if any(None in elem for elem in rel_values):
             return None
         else:
 
             return rel_values
-

@@ -29,15 +29,30 @@ Apporach while harvesting (For more information about the harvester [OAI-PMH Har
 - Molecule → Molecular Formula
 - Molecule → Exact Mass 
 
+****
+### Data Models and Migration 
 This Plugin also contains database migration tables to store molecule data of each dataset molecule in molecule table. 
-Name of the database table: `molecule_data`
+Name of the database tables: `molecules` & `molecules_rel_data` 
 
-Database Migration is done, to establibsh new tables within the CKAN PostgreSQL database. For more information please check offical documenation: https://docs.ckan.org/en/2.9/extensions/best-practices.html
+Database Migration is done, to establish new tables within the CKAN PostgreSQL database. For more information please check offical documenation: https://docs.ckan.org/en/2.9/extensions/best-practices.html
 
-NOTE: If you are creating your own migration tables then, Please follow official documentation preciesly. (https://docs.ckan.org/en/2.9/extensions/best-practices.html)
+**Data Models**
+Two data models scripts are sued for interaction with database tables of Molecules and MolecularRelationData. 
+
+1. _Molecules Table_: The data table schema is indexed to store molecule data while harvesting using RDKit Python Library, 
+which contains id for every entry and their molecules information. (Highly based on InChIKey)
+
+2. _Molecules Relation Data Table_ : The data table schema is indexed to store moleculesID and their corresponding
+package ID. 
+
+The classmethods are designed to store/create rows during each harvesting and also get information via packageID and 
+their moelcular information.
+
+***Note***: If you are creating your own migration tables then, Please follow official documentation preciesly. (https://docs.ckan.org/en/2.9/extensions/best-practices.html)
 
 You can copy migration python file and version control files, after creating migration is done. if you are using different table names & column names, please name them using "lower_cases" instead of CamelCase.
 
+****
 ## Requirements
 
 Compatibility with core CKAN versions:

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="final-push for advance search">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="migration tables all">
+      <change afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/base.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_tab.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +58,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ckanext/rdkit_visuals/models" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/models" />
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets" />
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/public" />
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/public/static/image" />
@@ -246,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696599394452</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="migration tables all">
+      <created>1700485138774</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1700485138774</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,6 +287,7 @@
     <MESSAGE value="Front-end related resource changes" />
     <MESSAGE value="Data &amp; Resource page view changes" />
     <MESSAGE value="Advance search image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Advance search image" />
+    <MESSAGE value="migration tables all" />
+    <option name="LAST_COMMIT_MESSAGE" value="migration tables all" />
   </component>
 </project>
