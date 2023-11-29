@@ -13,7 +13,6 @@ from ckan.model import meta
 from .base import Base
 
 
-
 class MolecularRelationData(Base):
     __tablename__ = "molecule_rel_data"
 
@@ -27,7 +26,7 @@ class MolecularRelationData(Base):
     
     """
 
-    id = Column(u'id', _types.Integer, primary_key=True,autoincrement=True, nullable=False)
+    id = Column(u'id', _types.Integer, primary_key=True, autoincrement=True, nullable=False)
     molecules_id = Column(u'molecules_id', _types.UnicodeText, ForeignKey('molecules.id'), nullable=False)
     package_id = Column(u'package_id', _types.UnicodeText, ForeignKey('package.id'), nullable=False)
 
@@ -115,3 +114,18 @@ class MolecularRelationData(Base):
 
         exact_mass = Session.query(Molecules.exact_mass).filter(Molecules.id.in_(molecules_sub_query)).all()
         return exact_mass
+
+    @classmethod
+    def get_molecule_data_by_package_id(cls, package_id):
+        """
+        :param package_id:
+        :return: A list of molecules data for given molecule id via molecule_rel_data and package_id
+        """
+
+        molecules_sub_query = Session.query(
+            cls.molecules_id
+        ).filter(cls.package_id == package_id).subquery()
+
+        molecule_data = Session.query(Molecules.inchi).filter(Molecules.id.in_(molecules_sub_query)).all()
+
+        return molecule_data
