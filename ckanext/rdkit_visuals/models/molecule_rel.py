@@ -9,12 +9,15 @@ import ckan.model.package as _package
 from ckanext.rdkit_visuals.models.molecule_tab import Molecules
 from sqlalchemy import types as _types
 from ckan.model import Session
-#from ckan.model.meta import
+from ckan.model import meta
 from .base import Base
 
+#__all__ =[u"MolecularRelationData", "molecule_rel_data_table"]
 
 class MolecularRelationData(Base):
+
     __tablename__ = "molecule_rel_data"
+    __table_args__ = {'schema': 'public'}
 
     """
     Table which contains molecule and package relationship.
@@ -26,10 +29,9 @@ class MolecularRelationData(Base):
     
     """
     id = Column(u'id', _types.Integer, primary_key=True, autoincrement=True, nullable=False)
-    molecules_id = Column(u'molecules_id', _types.UnicodeText, ForeignKey('molecules.id'), nullable=False)
-    package_id = Column(u'package_id', _types.UnicodeText, ForeignKey('package.id'), nullable=False)
+    molecules_id = Column(u'molecules_id', _types.Integer, ForeignKey(u'molecules.id'), nullable=False)
+    package_id = Column(u'package_id', _types.UnicodeText, ForeignKey(_package.Package.id), nullable=False)
 
-    #package = relationship(_package.Package, backref="molecular_relation_data")
 
     @classmethod
     def create(cls, molecules_id, package_id):
@@ -132,4 +134,16 @@ class MolecularRelationData(Base):
         return molecule_data
 
 
+package = relationship(_package.Package, secondary= MolecularRelationData, backref="molecular_relation_data")
+
 #meta.registry.map_imperatively(MolecularRelationData, MolecularRelationData.__table__)
+
+#meta.mapper(#
+#    MolecularRelationData,
+#    'molecule_rel_data',
+#    properties={
+#        u"package": orm.relation(
+#            Package, backref=orm.backref(u"molecule_rel_data", cascade=u"all, delete, delete-orphan")
+#        )
+#    },
+#)
