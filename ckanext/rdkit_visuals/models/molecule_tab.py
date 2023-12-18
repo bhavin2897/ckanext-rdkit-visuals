@@ -11,7 +11,6 @@ from ckan.model import meta
 from .base import Base
 
 
-
 class Molecules(Base):
     __tablename__ = 'molecules'
 
@@ -22,20 +21,20 @@ class Molecules(Base):
     """
 
     id = Column(_types.Integer, primary_key=True, autoincrement=True)
-    package_id = Column(_types.Integer, ForeignKey('package.id'))
     inchi = Column(_types.String)
     smiles = Column(_types.String)
     inchi_key = Column(_types.String)
+
     exact_mass = Column(Float)
     mol_formula = Column(_types.String)
 
     # Relationship with the Package model
-    #package = relationship('Package')
+    # package = relationship('Package')
 
     # Additional methods can be added here as needed
 
     @classmethod
-    def create(cls, package_id, inchi, smiles, inchi_key, exact_mass, mol_formula):
+    def create(cls, inchi, smiles, inchi_key, exact_mass, mol_formula):
         """
         Create a new Molecule entry and store it in the database.
 
@@ -49,7 +48,6 @@ class Molecules(Base):
         :return: The created Molecule instance
         """
         new_molecule = cls(
-            package_id=package_id,
             inchi=inchi,
             smiles=smiles,
             inchi_key=inchi_key,
@@ -60,4 +58,14 @@ class Molecules(Base):
         Session.commit()
         return new_molecule
 
+    @classmethod
+    def _get_inchi_from_db(cls, inchi_key):
+        """
 
+        :param inchi_key:
+        :return: the id of the molecule
+        """
+
+        molecule_id_result = Session.query(Molecules.id).filter(Molecules.inchi_key == inchi_key).all()
+
+        return molecule_id_result

@@ -5,11 +5,11 @@ from sqlalchemy import Column, ForeignKey, func, String, distinct
 from sqlalchemy.orm import relationship
 from sqlalchemy import orm
 
-from ckan.model import meta, Package, domain_object
+import ckan.model.package as _package
 from ckanext.rdkit_visuals.models.molecule_tab import Molecules
 from sqlalchemy import types as _types
 from ckan.model import Session
-from ckan.model import meta
+#from ckan.model.meta import
 from .base import Base
 
 
@@ -22,13 +22,14 @@ class MolecularRelationData(Base):
     molecules_id from molecules data table are stored here. 
     Which internally, relates to the packages and their ids. 
     
-    These two are combined in this table, for simplier access. 
+    These two are combined in this table, for simpler access. 
     
     """
-
     id = Column(u'id', _types.Integer, primary_key=True, autoincrement=True, nullable=False)
     molecules_id = Column(u'molecules_id', _types.UnicodeText, ForeignKey('molecules.id'), nullable=False)
     package_id = Column(u'package_id', _types.UnicodeText, ForeignKey('package.id'), nullable=False)
+
+    #package = relationship(_package.Package, backref="molecular_relation_data")
 
     @classmethod
     def create(cls, molecules_id, package_id):
@@ -129,3 +130,6 @@ class MolecularRelationData(Base):
         molecule_data = Session.query(Molecules.inchi).filter(Molecules.id.in_(molecules_sub_query)).all()
 
         return molecule_data
+
+
+#meta.registry.map_imperatively(MolecularRelationData, MolecularRelationData.__table__)
