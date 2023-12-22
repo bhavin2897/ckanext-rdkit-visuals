@@ -32,7 +32,6 @@ class MolecularRelationData(Base):
     molecules_id = Column(u'molecules_id', _types.Integer, ForeignKey(u'molecules.id'), nullable=False)
     package_id = Column(u'package_id', _types.UnicodeText, ForeignKey(_package.Package.id), nullable=False)
 
-
     @classmethod
     def create(cls, molecules_id, package_id):
         """
@@ -134,16 +133,5 @@ class MolecularRelationData(Base):
         return molecule_data
 
 
-package = relationship(_package.Package, secondary= MolecularRelationData, backref="molecular_relation_data")
-
-#meta.registry.map_imperatively(MolecularRelationData, MolecularRelationData.__table__)
-
-#meta.mapper(#
-#    MolecularRelationData,
-#    'molecule_rel_data',
-#    properties={
-#        u"package": orm.relation(
-#            Package, backref=orm.backref(u"molecule_rel_data", cascade=u"all, delete, delete-orphan")
-#        )
-#    },
-#)
+# relationship to build between molecules and packages
+package = relationship(_package.Package, secondary= MolecularRelationData, back_populates="molecular_relation_data", cascade="all, delete")
