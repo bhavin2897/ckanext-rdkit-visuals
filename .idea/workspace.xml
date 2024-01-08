@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="molecules Rel data table updated with relationships">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/resource_read.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/resource_read.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/data_page_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/data_page_visuals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/rdkit_visuals.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

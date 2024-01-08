@@ -1,7 +1,9 @@
 {% ckan_extends %}
-{% block resource_view_content %}
-    {% if pkg_dict.get('inchi_key') %}
-        {% snippet "snippets/data_page_visuals.html", pkg = pkg_dict%}
+    {% block resource_view_content %}
         {{ super() }}
-    {% endif %}
-{% endblock %}
+    {% endblock %}
+
+
+
+
+

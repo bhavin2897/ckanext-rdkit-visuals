@@ -85,7 +85,7 @@
          {% if data_dict.exact_mass %}
            <tr>
               <th scope="row" class="dataset-label">{{ _("Exact Mass") }}</th>
-              <td class="dataset-details">{{ data_dict.exact_mass }} {{ _('g/mol') }}</td>
+              <td class="dataset-details">{{ '%.3f' | format(data_dict.exact_mass | float) }} {{ _('g/mol') }}</td>
            </tr>
          {% endif %}
           </tbody>
