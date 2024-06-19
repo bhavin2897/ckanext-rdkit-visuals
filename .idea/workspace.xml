@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="fixed two resource views of resource_read">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="added recursive" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -280,7 +278,21 @@
       <option name="project" value="LOCAL" />
       <updated>1704711535508</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="added recursive">
+      <created>1718719806029</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718719806029</updated>
+    </task>
+    <task id="LOCAL-00026" summary="added recursive">
+      <created>1718721846551</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1718721846551</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -312,6 +324,7 @@
     <MESSAGE value="molecule tables updated" />
     <MESSAGE value="molecules Rel data table updated with relationships" />
     <MESSAGE value="fixed two resource views of resource_read" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed two resource views of resource_read" />
+    <MESSAGE value="added recursive" />
+    <option name="LAST_COMMIT_MESSAGE" value="added recursive" />
   </component>
 </project>
