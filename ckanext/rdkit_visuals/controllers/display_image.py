@@ -6,7 +6,6 @@ from PIL import Image
 from ckanext.related_resources.models.related_resources import RelatedResources as related_resources
 from ckanext.rdkit_visuals.models.molecule_rel import MolecularRelationData as molecule_rel
 
-
 class RdkitVisualsController():
 
     def display_image(package_name):

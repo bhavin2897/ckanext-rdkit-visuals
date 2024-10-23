@@ -20,6 +20,7 @@ class RdkitVisualsPlugin(plugins.SingletonPlugin):
         toolkit.add_resource('public/statics', 'ckanext-rdkit-visuals')
 
 
+    # IBlueprint
     def get_blueprint(self):
 
         blueprint = Blueprint(self.name, self.__module__)
@@ -33,9 +34,11 @@ class RdkitVisualsPlugin(plugins.SingletonPlugin):
         )
         return blueprint
 
+
+    # ITemplate Helpers
     def get_helpers(self):
 
         return {'rdkit_visuals': RdkitVisualsController.display_image,
                 'molecule_data':RdkitVisualsController.molecule_data,
-                'alternate_names': RdkitVisualsController.alternames,
-                'related_values': RdkitVisualsController.related_resources,}
+               'alternate_names': RdkitVisualsController.alternames,
+               'related_values': RdkitVisualsController.related_resources,}

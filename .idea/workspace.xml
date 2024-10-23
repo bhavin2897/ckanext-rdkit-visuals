@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="added recursive" />
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="added recursive">
+      <change afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/public/BEFTXRINHQTSSE-UHFFFAOYSA-N.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/public/static/rdkit_visuals_details.js" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/blueprint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +38,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bhavin2897&quot;
+  }
+}</component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -31,34 +52,40 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/bhavin2897/ckanext-rdkit-visuals.git&quot;,
+    &quot;accountId&quot;: &quot;849dcb34-4f2c-4d7e-bd9c-4840c703f903&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/51fd43f24eaf_add_molecular_formula.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/2e23c588066e_rename_molecule_data_table_title.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/1f5e9a1c52dd_add_new_molecule_relation_data_table.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/e224157c4480_add_molecular_table.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/data_page_visuals.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/rdkit_visuals.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/resource_read.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/related_identifier.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/1f5e9a1c52dd_add_new_molecule_relation_data_table.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/migration/rdkit_visuals/versions/49ff7076d8b0_remoce_package_id_from_molecules_table.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_tab.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/resource_read.html" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="23EIxNe3GscJ7IkjUWSE0BkJUpT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ckanext/rdkit_visuals/models" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/usr/lib/ckan/default/src/ckanext-rdkit-visuals&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/models" />
@@ -76,6 +103,7 @@
   <component name="RunManager">
     <configuration name="plugin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ckanext-rdkit-visuals" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -100,6 +128,13 @@
         <item itemvalue="Python.plugin" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -305,7 +340,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Changed with a clause" />

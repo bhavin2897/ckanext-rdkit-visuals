@@ -24,9 +24,10 @@ class Molecules(Base):
     inchi = Column(_types.String)
     smiles = Column(_types.String)
     inchi_key = Column(_types.String)
-
     exact_mass = Column(Float)
     mol_formula = Column(_types.String)
+    iupac_name = Column(_types.String)
+    alternate_names = Column(_types.String)
 
     # Relationship with the Package model
     # package = relationship('Package')
@@ -34,7 +35,7 @@ class Molecules(Base):
     # Additional methods can be added here as needed
 
     @classmethod
-    def create(cls, inchi, smiles, inchi_key, exact_mass, mol_formula):
+    def create(cls, inchi, smiles, inchi_key, exact_mass, mol_formula,iupac_name, alternate_names):
         """
         Create a new Molecule entry and store it in the database.
 
@@ -48,11 +49,13 @@ class Molecules(Base):
         :return: The created Molecule instance
         """
         new_molecule = cls(
-            inchi=inchi,
+            inchi=inchi.strip(),
             smiles=smiles,
             inchi_key=inchi_key,
             exact_mass=exact_mass,
-            mol_formula=mol_formula
+            mol_formula=mol_formula,
+            iupac_name = iupac_name,
+            alternate_names = alternate_names
         )
         Session.add(new_molecule)
         Session.commit()

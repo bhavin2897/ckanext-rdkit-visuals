@@ -128,9 +128,12 @@ class MolecularRelationData(Base):
             cls.molecules_id
         ).filter(cls.package_id == package_id).subquery()
 
-        molecule_data = Session.query(Molecules.inchi).filter(Molecules.id.in_(molecules_sub_query)).all()
+        inchi = Session.query(Molecules.inchi).filter(Molecules.id.in_(molecules_sub_query)).all()
+        iupac_name = Session.query(Molecules.iupac_name).filter(Molecules.id.in_(molecules_sub_query)).all()
 
-        return molecule_data
+        return inchi,iupac_name
+
+
 
 
 # relationship to build between molecules and packages
