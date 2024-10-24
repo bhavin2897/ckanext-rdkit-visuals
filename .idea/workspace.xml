@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="added recursive">
-      <change afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_rel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/models/molecule_tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/plugin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/public/BEFTXRINHQTSSE-UHFFFAOYSA-N.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/public/static/rdkit_visuals_details.js" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/blueprint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_data_page_visuals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets/ckanext_rdkit_visuals_rdkit_visuals.html" afterDir="false" />
-    </list>
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="Added models for iupac_name and alternate names" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -327,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718721846551</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Added models for iupac_name and alternate names">
+      <option name="closed" value="true" />
+      <created>1729676722209</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1729676722209</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,6 +355,7 @@
     <MESSAGE value="molecules Rel data table updated with relationships" />
     <MESSAGE value="fixed two resource views of resource_read" />
     <MESSAGE value="added recursive" />
-    <option name="LAST_COMMIT_MESSAGE" value="added recursive" />
+    <MESSAGE value="Added models for iupac_name and alternate names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added models for iupac_name and alternate names" />
   </component>
 </project>
