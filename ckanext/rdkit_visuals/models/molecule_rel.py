@@ -130,8 +130,9 @@ class MolecularRelationData(Base):
 
         inchi = Session.query(Molecules.inchi).filter(Molecules.id.in_(molecules_sub_query)).all()
         iupac_name = Session.query(Molecules.iupac_name).filter(Molecules.id.in_(molecules_sub_query)).all()
+        molecule_name = Session.query(Molecules.molecule_name).filter(Molecules.id.in_(molecules_sub_query)).all()
 
-        return inchi,iupac_name
+        return inchi,iupac_name, molecule_name
 
 
 
