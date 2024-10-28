@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="Iupac Name display on package read" />
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="Add molecule_name in tabe" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -331,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729764626538</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Add molecule_name in tabe">
+      <option name="closed" value="true" />
+      <created>1729861318108</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1729861318108</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,6 +373,7 @@
     <MESSAGE value="added recursive" />
     <MESSAGE value="Added models for iupac_name and alternate names" />
     <MESSAGE value="Iupac Name display on package read" />
-    <option name="LAST_COMMIT_MESSAGE" value="Iupac Name display on package read" />
+    <MESSAGE value="Add molecule_name in tabe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add molecule_name in tabe" />
   </component>
 </project>

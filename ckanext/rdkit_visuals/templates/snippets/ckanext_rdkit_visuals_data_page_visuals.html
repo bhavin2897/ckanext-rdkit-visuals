@@ -1,7 +1,8 @@
 {% set data_dict = {'inchi': pkg.get('inchi'), 'smiles': pkg.get('smiles'), 'inchi_key': pkg.get('inchi_key'), 'exact_mass' : pkg.get('exactmass'), 'molecular_formula': pkg.get('molecular_formula') } %}
 
 {% set dest_url = h.url_for('rdkit_visuals.display_image', package_name = pkg.get('id'), _external=True) %}
-{% set molecule_formula = h.molecule_data(package_name = pkg.get('id'))  %}
+{# {% set molecule_formula = h.molecule_data(package_name = pkg.get('id'))  %} #}
+{% set molecule_formula,exact_mass,inchi,iupac_name,molecule_name = h.get_molecule_data(package_id = package_result[0]['id']) %}
 {% set alter_names = h.alternate_names(package_name = pkg.get('id')) %}}
 
 
@@ -54,6 +55,20 @@
        </table>
         <table class="table">
          <tbody>
+
+         {% if molecule_name %}
+          <tr>
+              <th width="25%" scope="row" class="dataset-label">{{ _("Molecule Name") }}</th>
+              <td  width="50%" class="dataset-details">{{ molecule_name }}</td>
+           </tr>
+         {% endif %}
+
+         {% if IUpacName %}
+            <tr>
+              <th scope="row" class="dataset-label">{{ _("IUPAC Name") }}</th>
+              <td class="dataset-details"> {{ IUpacName }}</td>
+            </tr>
+         {% endif %}
 
          {% if data_dict.inchi %}
            <tr>

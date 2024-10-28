@@ -57,12 +57,13 @@
         <table class="table">
          <tbody>
 
-         {% if data_dict.inchi %}
+         {% if molecule_name %}
            <tr>
-            <th width="25%" scope="row" class="dataset-label">{{ _("InChI") }}</th>
-            <td  width="50%" class="dataset-details">{{ data_dict.inchi }}</td>
+              <th width="25%" scope="row" class="dataset-label">{{ _("Molecule Name") }}</th>
+              <td  width="50%" class="dataset-details">{{ molecule_name }}</td>
            </tr>
          {% endif %}
+
 
          {% if iupac_name %}
           <tr>
@@ -71,12 +72,13 @@
            </tr>
          {% endif %}
 
-         {% if molecule_name %}
+         {% if data_dict.inchi %}
            <tr>
-              <th width="25%" scope="row" class="dataset-label">{{ _("Molecule Name") }}</th>
-              <td  width="50%" class="dataset-details">{{ molecule_name }}</td>
+            <th width="25%" scope="row" class="dataset-label">{{ _("InChI") }}</th>
+            <td  width="50%" class="dataset-details">{{ data_dict.inchi }}</td>
            </tr>
          {% endif %}
+
 
          {% if data_dict.smiles %}
            <tr>
