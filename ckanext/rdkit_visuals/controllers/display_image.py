@@ -9,18 +9,23 @@ from ckanext.rdkit_visuals.models.molecule_rel import MolecularRelationData as m
 class RdkitVisualsController():
 
     def display_image(package_name):
-        # package_name = request.form.get('package')
-        package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
+        byteimage = ''
+        try:
+            package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
 
-        inchi_key = package['inchi_key']
+            inchi_key = package['inchi_key']
+            if not inchi_key.startswith('data'):
 
-        filepath = '/var/lib/ckan/default/storage/images/' + str(inchi_key) + '.png'
-        file = open(filepath, 'rb').read()
-        image = Image.open(io.BytesIO(file))
-        output = io.BytesIO()
-        image.save(output, 'PNG')
-        output.seek(0)
-        byteimage = base64.b64encode(output.getvalue()).decode()
+                filepath = '/var/lib/ckan/default/storage/images/' + str(inchi_key) + '.png'
+                file = open(filepath, 'rb').read()
+                image = Image.open(io.BytesIO(file))
+                output = io.BytesIO()
+                image.save(output, 'PNG')
+                output.seek(0)
+                byteimage = base64.b64encode(output.getvalue()).decode()
+
+        except TypeError:
+            pass
 
         return byteimage
 
