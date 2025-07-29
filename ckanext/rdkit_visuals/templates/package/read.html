@@ -1,21 +1,5 @@
 {% ckan_extends %}
 
-<script type="text/javascript" src="https://chemapps.stolaf.edu/jmol/jsmol/JSmol.min.js"></script>
-
-<script type="text/javascript">
-var Info = {
-    width: 400,
-    height: 400,
-    debug: false,
-    j2sPath: "https://chemapps.stolaf.edu/jmol/jsmol/j2s",
-    script: "load EntryWithCollCode119917.cif; spin on;",
-    use: "HTML5"
-};
-$(document).ready(function() {
-    $("#jsmol-container").html(Jmol.getAppletHtml("jsmolApplet", Info));
-});
-</script>
-
 {% block package_notes %}
   {{ super() }}
   {% if pkg_dict.get('inchi_key') %}
@@ -45,7 +29,10 @@ $(document).ready(function() {
 {% endif %}
   {% endblock %}
 
+
 {% block package_additional_info %}
+
+
 
     {% snippet "snippets/ckanext_rdkit_visuals_related_identifier.html", pkg = pkg %}
 

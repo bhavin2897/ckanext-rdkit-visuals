@@ -21,13 +21,47 @@ Most of the chemistry repository provide standard InChI key in their metadata fi
 Not only on the "dataset" page of CKAN, but also on "resource" page. 
 
 
-Apporach while harvesting (For more information about the harvester [OAI-PMH Harvester](https://github.com/bhavin2897/ckanext-oaipmh)): 
+Approach while harvesting (For more information about the harvester [OAI-PMH Harvester](https://github.com/bhavin2897/ckanext-oaipmh)): 
 - InChI → Smiles
 - InChI → InChIKey
 - InChI → Molecule
 - Molecule → Molecular Image
 - Molecule → Molecular Formula
 - Molecule → Exact Mass 
+
+## CKAN Crystal Structure Viewer
+
+This CKAN extension enables automatic rendering of 3D crystal structures on dataset pages using `.cif` (Crystallographic Information File) resources. It uses [3Dmol.js](https://3dmol.csb.pitt.edu/) to visualize molecular geometry interactively within the browser.
+
+### Features
+
+- Embeds an interactive 3D viewer when a CIF file is present.
+- Displays crystallographic metadata in a styled table.
+- Responsive layout for dataset detail pages.
+- Works without requiring any CKAN plugin—just a template override.
+
+### Usage
+
+To enable the viewer:
+
+1. Upload a `.cif` file as a resource in your dataset.
+2. Ensure metadata (e.g., space group, unit cell dimensions) is stored in `package.extras`.
+3. The viewer and metadata table will automatically appear on the dataset page.
+
+### Example Output
+
+- 3D viewer rendered using WebGL
+- Metadata like unit cell (`a`, `b`, `c`, `α`, `β`, `γ`), formula, and space group shown alongside
+
+### Dependencies
+
+- [3Dmol.js](https://3dmol.csb.pitt.edu/) (loaded via CDN)
+
+### Acknowledgments
+
+- Visualization powered by [3Dmol.js](https://3dmol.csb.pitt.edu/)
+- Inspired by molecular crystal display needs in chemistry research repositories
+
 
 ****
 ### Data Models and Migration 

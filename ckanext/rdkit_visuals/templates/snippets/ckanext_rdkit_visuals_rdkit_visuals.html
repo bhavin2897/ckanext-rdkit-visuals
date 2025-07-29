@@ -34,12 +34,42 @@
 
 <section class="chemical-info">
 
-  <h3>{{ _('Chemical Info') }}</h3>
+  <h3>{{ _('Chemical Information') }}</h3>
   <div class="row">
-  <div class = "col col-md-5">  <img id="imageid" src=""  alt='molecular Image'/>
+
+    {% for resource in pkg.resources %}
+        {% if resource.format == 'cif' %}
+      {% set cif_resource = resource %}
+        {% snippet "snippets/ckanext_rdkit_visuals_crystal_visuals.html", pkg = pkg , resource = resource , molecule_name = molecule_name%}
+
+      <div id="publication_section">
+  <section class="reference-section">
+    <h3>{{ _('References') }}</h3>
+    <table class="table table-striped table-bordered table-condensed">
+      <tbody>
+
+        {% for item in pkg.extras %}
+                {% if item.key == 'Citation' %}
+        <tr>
+          <th class="table-column-citation" colspan = "2"> {{_('Citation')}} </th>
+              <th class="table-column-rest" colspan="1">{{_('Link')}}</th>
+            </tr>
+        <tr>
+            <td colspan = "2">{{ item.value }}</td>
+            <td colspan="1"> <a href="https://doi.org/{{ pkg.doi }}" target="_blank" rel="noopener noreferrer">
+                https://doi.org/{{ pkg.doi }} </a> </td>
+        </tr>
+       {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
+
+      {% else %}
+      <div class = "col col-md-5">  <img id="imageid" loading="lazy" src=""  alt='molecular Image'/>
   </div>
-   <div class="col col-md-7">
-       <table class="table">
+        <table class="table">
            {% if alter_names %}
            {% set rowspan = alter_names|length %}
            <tr>
@@ -51,9 +81,7 @@
                 {% endfor %}
            </tr>
          {% endif %}
-
-
-       </table>
+         </table>
         <table class="table">
          <tbody>
 
@@ -111,9 +139,9 @@
           </tbody>
     </table>
    </div>
+      {% endif %}
+      {% endfor %}
 
-</div>
 </section>
-
 
 

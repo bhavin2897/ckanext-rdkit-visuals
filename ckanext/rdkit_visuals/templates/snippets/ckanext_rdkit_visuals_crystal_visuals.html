@@ -1,0 +1,90 @@
+{% set extras_dict = {} %}
+{% for e in pkg.extras %}
+  {% set _ = extras_dict.update({e.key: e.value}) %}
+{% endfor %}
+
+<style>
+  .crystal-info-container {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .crystal-viewer {
+    flex: 1 1 45%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .crystal-table {
+    flex: 1 1 45%;
+    min-width: 300px;
+  }
+
+  .crystal-viewer #viewer {
+    width: 100%;
+    height: 400px;
+    border: 1px solid #000;
+    border-radius: 4px;
+  }
+
+  .crystal-table table {
+    width: 100%;
+  }
+</style>
+
+<div class="crystal-info-container">
+  <!-- 3D Viewer Block -->
+  <div class="crystal-viewer">
+    <h4>3D Crystal Viewer</h4>
+    <div id="viewer" style="width: 100%; height: 400px; border: 1px solid black; position: relative;"></div>
+  </div>
+
+  <!-- Chemical Info Table Block -->
+  <div class="crystal-table">
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr><th>Formula</th><td>{{ pkg.get('mol_formula') }}</td></tr>
+        <tr><th>Calculated formula</th><td>{{ pkg.get('mol_formula') }}</td></tr>
+        <tr><th>a</th><td>{{ extras_dict.get('a') }}</td></tr>
+        <tr><th>b</th><td>{{ extras_dict.get('b') }}</td></tr>
+        <tr><th>c</th><td>{{ extras_dict.get('c') }}</td></tr>
+        <tr><th>α</th><td>{{ extras_dict.get('α') }}</td></tr>
+        <tr><th>β</th><td>{{ extras_dict.get('β') }}</td></tr>
+        <tr><th>γ</th><td>{{ extras_dict.get('γ') }}</td></tr>
+        <tr><th>Cell volume</th><td>{{ extras_dict.get('Cell volume') }}</td></tr>
+        <tr><th>Number of distinct elements</th><td>{{ extras_dict.get('Number of distinct elements') }}</td></tr>
+        <tr><th>Space group number</th><td>{{ extras_dict.get('Space group number') }}</td></tr>
+        <tr><th>Hermann-Mauguin space group symbol</th><td>{{ extras_dict.get('Hermann-Mauguin space group symbol') }}</td></tr>
+        <tr><th>Hall space group symbol</th><td>{{ extras_dict.get('Hall space group symbol') }}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Viewer script -->
+<script src="https://3dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+<script>
+  fetch('{{ resource.url }}')
+    .then(response => response.text())
+    .then(data => {
+      let viewer = $3Dmol.createViewer("viewer", {
+        backgroundColor: "white"
+      });
+      viewer.addModel(data, "cif");
+      viewer.setStyle({}, { stick: {}, sphere: { scale: 0.3 } });
+      viewer.zoomTo();
+      viewer.render();
+    })
+    .catch(error => {
+      console.error("Error loading CIF:", error);
+      document.getElementById("viewer").innerText = "Failed to load 3D structure.";
+    });
+</script>
