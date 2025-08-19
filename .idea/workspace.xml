@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="feat: add 3D crystal viewer for CIF files using 3Dmol.js &amp; info table">
+    <list default="true" id="a480400d-cdd3-4e8e-bd87-9a91d7a686d6" name="Changes" comment="fix: 2 columns for mol image and info-table">
+      <change afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/snippets/resource_item.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/controllers/display_image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" beforeDir="false" afterPath="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/read.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,16 +77,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/usr/lib/ckan/default/src/ckanext-related_resources&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/usr/lib/ckan/default/src/ckanext-rdkit-visuals/ckanext/rdkit_visuals/templates/package/snippets",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/package/snippets" />
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/models" />
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/templates/snippets" />
       <recent name="$PROJECT_DIR$/ckanext/rdkit_visuals/public" />
@@ -124,14 +126,13 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.plugin" />
-        <item itemvalue="Python.plugin" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4c141bd692a7-e2d783800521-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26927.90" />
+        <option value="bundled-python-sdk-03e874896e21-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.23892.439" />
       </set>
     </attachedChunks>
   </component>
@@ -390,7 +391,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753775253211</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="perf: ignores error inchikey for crystal images">
+      <option name="closed" value="true" />
+      <created>1753780738631</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1753780738631</updated>
+    </task>
+    <task id="LOCAL-00036" summary="fix: 2 columns for mol image and info-table">
+      <option name="closed" value="true" />
+      <created>1753784697539</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1753784697539</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -405,8 +422,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed with a clause" />
-    <MESSAGE value="Displayin on Short Inchi as Chemical info" />
     <MESSAGE value="freezing requirements" />
     <MESSAGE value="adding &amp; migrating molecule data table" />
     <MESSAGE value="xml file" />
@@ -430,6 +445,8 @@
     <MESSAGE value="molecule typer error with None values" />
     <MESSAGE value="fix: removed 'this dataset has no data' for molecule page" />
     <MESSAGE value="feat: add 3D crystal viewer for CIF files using 3Dmol.js &amp; info table" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add 3D crystal viewer for CIF files using 3Dmol.js &amp; info table" />
+    <MESSAGE value="perf: ignores error inchikey for crystal images" />
+    <MESSAGE value="fix: 2 columns for mol image and info-table" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 2 columns for mol image and info-table" />
   </component>
 </project>
