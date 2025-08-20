@@ -51,13 +51,13 @@
         {% for item in pkg.extras %}
                 {% if item.key == 'Citation' %}
         <tr>
-          <th class="table-column-citation" colspan = "2"> {{_('Citation')}} </th>
-              <th class="table-column-rest" colspan="1">{{_('Link')}}</th>
+          <th class="table-column-citation" colspan = "3"> {{_('Citation')}} </th>
+
             </tr>
         <tr>
-            <td colspan = "2">{{ item.value }}</td>
-            <td colspan="1"> <a href="https://doi.org/{{ pkg.doi }}" target="_blank" rel="noopener noreferrer">
-                https://doi.org/{{ pkg.doi }} </a> </td>
+            <td colspan = "3">{{ item.value }}, doi: <a href="https://doi.org/{{ pkg.doi }}" target="_blank" rel="noopener noreferrer">
+               {{ pkg.doi }} </a></td>
+
         </tr>
        {% endif %}
         {% endfor %}
